@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"data\\\\products.ts -> @/data/shoes-data\":{\"id\":\"data\\\\products.ts -> @/data/shoes-data\",\"files\":[\"static/chunks/_app-pages-browser_data_shoes-data_ts.js\"]}}"

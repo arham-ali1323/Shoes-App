@@ -107,7 +107,7 @@ export const products: Product[] = [
   {
     id: "9",
     name: "Reebok Classic Leather",
-    images: ["https://images.unsplash.com/photo-1600236836313-eb9635483421?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1600236836313-eb9635483421?w=400&h=400&fit=crop&auto=format"],
+    images: ["https://images.unsplash.com/photo-1605346434686-77789e9a8c61?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1605346434686-77789e9a8c61?w=400&h=400&fit=crop&auto=format"],
     price: 75,
     category: "Lifestyle",
     tags: ["minimalist", "versatile", "classic"],
@@ -130,7 +130,7 @@ export const products: Product[] = [
   {
     id: "11",
     name: "Adidas Stan Smith",
-    images: ["https://images.unsplash.com/photo-1600236836313-eb9635483421?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1600236836313-eb9635483421?w=400&h=400&fit=crop&auto=format"],
+    images: ["https://images.unsplash.com/photo-1605346434686-77789e9a8c61?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1605346434686-77789e9a8c61?w=400&h=400&fit=crop&auto=format"],
     price: 80,
     category: "Lifestyle",
     tags: ["minimalist", "classic", "versatile"],
@@ -205,7 +205,7 @@ export const featuredProducts: Product[] = [
   {
     id: "f2",
     name: "Adidas Yeezy Boost 350 V2",
-    images: ["https://images.unsplash.com/photo-1600236836313-eb9635483421?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&auto=format"],
+    images: ["https://images.unsplash.com/photo-1605346434686-77789e9a8c61?w=400&h=400&fit=crop&auto=format", "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop&auto=format"],
     price: 320,
     oldPrice: 380,
     category: "Lifestyle",
@@ -252,7 +252,14 @@ export const featuredProducts: Product[] = [
   }
 ];
 
-// API function to fetch products from the API
+// Server-side function to get products without HTTP request
+export async function getServerProducts(): Promise<Product[]> {
+  // Directly import and return the shoes data
+  const { shoesData } = await import('@/data/shoes-data');
+  return shoesData;
+}
+
+// API function to fetch products from the API (client-side only)
 export async function fetchProductsFromAPI(): Promise<Product[]> {
   try {
     const response = await fetch('/api/shoes');
